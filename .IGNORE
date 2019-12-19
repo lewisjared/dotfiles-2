@@ -1,6 +1,7 @@
 # Files listed here will not be copied to your home directory.
 
 .git/
+.idea/
 
 .IGNORE
 bootstrap.sh

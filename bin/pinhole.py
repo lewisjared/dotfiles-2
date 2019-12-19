@@ -26,7 +26,7 @@ import os
 
 
 def log( s ):
-    print '%s:%s' % ( time.ctime(), s )
+    print('%s:%s' % ( time.ctime(), s ))
     sys.stdout.flush()
 
 

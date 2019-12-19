@@ -1,4 +1,4 @@
-# :bookmark_tabs:  .dotfiles 
+# :bookmark_tabs:  .dotfiles
 
 ... for Bash / ZSH / Git Bash (Windows) / Cygwin (Windows) / Bash on Ubuntu on Windows
 
@@ -12,13 +12,10 @@ You can clone the repository wherever you want. (I like to keep it in `~/Project
 
 ```bash
 # get the code
-cd ~ ; git clone https://github.com/voku/dotfiles.git; cd dotfiles
+cd ~ ; git clone https://github.com/lewisjared/dotfiles.git; cd dotfiles
 
 # only for Debian based e.g. Ubuntu, Lubuntu, Kubuntu etc.
 ./firstInstallDebianBased.sh
-
-# only for Cygwin (Windows)
-./firstInstallCygwin.sh
 
 # copy the dotfiles into your home directory
 ./bootstrap.sh

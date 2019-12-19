@@ -47,8 +47,9 @@ aptitude install \
   autoconf \
   make \
   cmake \
-  mktemp \
   dialog \
+  gfortran \
+  apt-transport-https \
   `# unzip, unrar etc.` \
   cabextract \
   zip \
@@ -116,16 +117,9 @@ aptitude install \
   `# fonts also "non-free"-fonts` \
   `# -- you need "multiverse" || "non-free" sources in your "source.list" -- ` \
   fontconfig \
-  ttf-freefont \
   ttf-mscorefonts-installer \
   ttf-bitstream-vera \
   ttf-dejavu \
-  ttf-liberation \
-  ttf-linux-libertine \
-  ttf-larabie-deco \
-  ttf-larabie-straight \
-  ttf-larabie-uncommon \
-  ttf-liberation \
   xfonts-jmk \
   `# trace everything` \
   strace \
@@ -136,11 +130,7 @@ aptitude install \
   `# repo-tools`\
   git \
   subversion \
-  mercurial \
   `# usefull tools` \
-  nodejs \
-  npm \
-  ruby-full \
   imagemagick \
   lynx \
   nmap \
@@ -152,8 +142,11 @@ aptitude install \
   python \
   python-pip \
   python-dev \
+  remmina \
   `# install python-pygments for json print` \
   python-pygments
+
+snap install node --channel=12/stable --classic
 
 # try zsh?
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
@@ -206,11 +199,10 @@ ln -s /usr/bin/nodejs /usr/bin/node
 # install Sublime Text 3
 #
 
-#sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-#sudo aptitude update
-#sudo aptitude install sublime-text-installer
-#sudo ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime
-
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+aptitude update
+aptitude install sublime-text
 
 #
 # install node.js without deb-files e.g. for Debian - stable
@@ -226,15 +218,15 @@ ln -s /usr/bin/nodejs /usr/bin/node
 ask_install "install webworker tools"
 if [[ $? -eq 1 ]]; then
 
-  echo "update/install ruby-rems ..."
-
-  gem update --pre
-
-  gem install sass --pre --verbose
-  gem install compass --pre --verbose
-  gem install autoprefixer-rails --pre --verbose
-  gem install compass-rgbapng --pre --verbose
-  gem install oily_png --verbose
+#  echo "update/install ruby-rems ..."
+#
+#  gem update --pre
+#
+#  gem install sass --pre --verbose
+#  gem install compass --pre --verbose
+#  gem install autoprefixer-rails --pre --verbose
+#  gem install compass-rgbapng --pre --verbose
+#  gem install oily_png --verbose
 
   echo "update/install npm-packages ..."
 
@@ -252,42 +244,42 @@ if [[ $? -eq 1 ]]; then
   npm install -g yo
   npm install -g svgo
 
-  echo "install php-5-extensions ..."
-
-  aptitude install \
-    php5-cli \
-    php5-mysql \
-    php5-curl \
-    php5-gd \
-    php5-intl \
-    php-pear \
-    php5-imagick \
-    php5-imap \
-    php5-mcrypt \
-    php5-memcached \
-    php5-ming \
-    php5-ps \
-    php5-pspell \
-    php5-recode \
-    php5-snmp \
-    php5-sqlite \
-    php5-tidy \
-    php5-xmlrpc \
-    php5-xsl \
-    php5-xdebug \
-    php5-apcu \
-    php5-geoip
-
-  php5enmod json
-  php5enmod mcrypt
-  php5enmod curl
-  php5enmod mysql
-  php5enmod gd
-  php5enmod imagick
-  php5enmod apcu
-
-  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
-  ln -s /usr/bin/composer.phar /usr/bin/composer
+#  echo "install php-5-extensions ..."
+#
+#  aptitude install \
+#    php5-cli \
+#    php5-mysql \
+#    php5-curl \
+#    php5-gd \
+#    php5-intl \
+#    php-pear \
+#    php5-imagick \
+#    php5-imap \
+#    php5-mcrypt \
+#    php5-memcached \
+#    php5-ming \
+#    php5-ps \
+#    php5-pspell \
+#    php5-recode \
+#    php5-snmp \
+#    php5-sqlite \
+#    php5-tidy \
+#    php5-xmlrpc \
+#    php5-xsl \
+#    php5-xdebug \
+#    php5-apcu \
+#    php5-geoip
+#
+#  php5enmod json
+#  php5enmod mcrypt
+#  php5enmod curl
+#  php5enmod mysql
+#  php5enmod gd
+#  php5enmod imagick
+#  php5enmod apcu
+#
+#  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
+#  ln -s /usr/bin/composer.phar /usr/bin/composer
 fi
 
 # clean downloaded and already installed packages

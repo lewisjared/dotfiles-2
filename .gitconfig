@@ -311,7 +311,7 @@
 
   # Default editor for commit messages and other inputs
   # Even when EDITOR is set to something else
-  editor=vim
+  editor=nano
 
   # Global `.gitignore`
   excludesfile = ~/.gitignore_global
@@ -383,7 +383,7 @@
 
 [merge]
   #tool = opendiff
-  tool = vimdiff
+  tool = diff
 
   # Always show a diffstat at the end of a merge
   stat = true
@@ -457,6 +457,11 @@
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
 
+# gl: is a shorthand for git@gitlab.com
+[url "git@gitlab.com:"]
+  insteadOf = "gl:"
+  pushInsteadOf = "gitlab:"
+  pushInsteadOf = "git://gitlab.com/"
 [credential]
   # cache the password for http-auth
   helper = cache

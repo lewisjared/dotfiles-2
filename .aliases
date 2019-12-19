@@ -60,9 +60,9 @@ alias h="history"
 alias j="jobs"
 
 # quick edit
-alias zshrc="vim ~/.zshrc"
-alias bashrc="vim ~/.bashrc"
-alias vimrc="vim ~/.vimrc"
+alias zshrc="nano ~/.zshrc"
+alias bashrc="nano ~/.bashrc"
+alias vimrc="nano ~/.vimrc"
 
 # quick reload
 alias reload_bash_profile='source ~/.bash_profile'
@@ -428,6 +428,19 @@ alias pc="putclip"
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 
+alias gs='git status'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log --oneline --decorate --graph'
+
+
+# ------------------------------------------------------------------------------
+# | Docker                                                                      |
+# ------------------------------------------------------------------------------
+alias d=docker
+alias dc=docker-compose
+alias dl='docker logs `docker ps -l -q`'
+
 
 # ------------------------------------------------------------------------------
 # | Other                                                                      |
@@ -482,7 +495,8 @@ fi
 
 # keep the ssh connection open for at least two hours
 alias ssh="ssh -o \"ServerAliveInterval 60\" -o \"ServerAliveCountMax 120\""
-
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias jn="jupyter notebook"
 
 # ------------------------------------------------------------------------------
 # | Fun                                                                        |
