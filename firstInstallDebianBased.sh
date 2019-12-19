@@ -129,6 +129,7 @@ aptitude install \
   w3m \
   `# repo-tools`\
   git \
+  git-lfs \
   subversion \
   `# usefull tools` \
   imagemagick \
@@ -146,6 +147,8 @@ aptitude install \
   `# install python-pygments for json print` \
   python-pygments
 
+
+git lfs install
 snap install node --channel=12/stable --classic
 
 # try zsh?
