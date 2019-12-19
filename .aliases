@@ -492,11 +492,13 @@ alias composer-install="composer install --optimize-autoloader"
 if [ "$SSH_AUTH_SOCK" != "" ] && [ -f "~/.ssh/id_rsa" ] && [ -x "/usr/bin/ssh-add"  ]; then
   ssh-add -l >/dev/null || alias ssh='(ssh-add -l >/dev/null || ssh-add) && unalias ssh; ssh'
 fi
+alias pubkey="cat ~/.ssh/id_rsa.pub"
 
 # keep the ssh connection open for at least two hours
 alias ssh="ssh -o \"ServerAliveInterval 60\" -o \"ServerAliveCountMax 120\""
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias jn="jupyter notebook"
+
 
 # ------------------------------------------------------------------------------
 # | Fun                                                                        |

@@ -46,3 +46,19 @@ preexec() {
   fi
 }
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$($CONFIG_CONDA_LOCATION/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$CONFIG_CONDA_LOCATION/etc/profile.d/conda.sh" ]; then
+        . "$CONFIG_CONDA_LOCATION/etc/profile.d/conda.sh"
+    else
+        export PATH="$CONFIG_CONDA_LOCATION/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
