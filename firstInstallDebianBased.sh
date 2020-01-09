@@ -159,6 +159,16 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   chsh -s $(which zsh)
 fi
 
+read -p "Do you want to install docker (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable"
+  apt-get update
+  apt-get install docker-ce docker-ce-cli containerd.io
+  usermod -aG docker $USER
+fi
+
 #
 # fixing nodejs for ubuntu
 #
