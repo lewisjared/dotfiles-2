@@ -106,21 +106,21 @@ doIt()
   fi
 
   # install vim-plugin-manager
-  if [ ! -d ~/.vim/bundle/vundle ]; then
-    mkdir ~/.vim/bundle
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim +BundleInstall +qall
-  else
-    read -p "Do you want to update vim-plugins? (y/n) " -n 1 yesOrNo
-    echo
-    if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-      (
-        cd ~/.vim/bundle/vundle
-        git pull
-        vim +BundleUpdate +qall
-      )
-    fi
-  fi
+  #if [ ! -d ~/.vim/bundle/vundle ]; then
+  #  mkdir ~/.vim/bundle
+  #  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  #  vim +BundleInstall +qall
+  #else
+  #  read -p "Do you want to update vim-plugins? (y/n) " -n 1 yesOrNo
+  #  echo
+  #  if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  #    (
+  #      cd ~/.vim/bundle/vundle
+  #      git pull
+  #      vim +BundleUpdate +qall
+  #    )
+  #  fi
+  #fi
 }
 
 dryRun()

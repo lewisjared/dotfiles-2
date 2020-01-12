@@ -376,3 +376,4 @@ export NODE_REPL_MODE="sloppy"
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING="UTF-8"
 
+export MAGICC_EXECUTABLE_7=/home/jared/code/uom/magicc/bin/magicc
