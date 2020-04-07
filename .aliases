@@ -499,6 +499,11 @@ alias ssh="ssh -o \"ServerAliveInterval 60\" -o \"ServerAliveCountMax 120\""
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias jn="jupyter notebook"
 
+# ------------------------------------------------------------------------------
+# | Kubernetes
+# ------------------------------------------------------------------------------
+
+alias k="kubectl"
 
 # ------------------------------------------------------------------------------
 # | Fun                                                                        |
